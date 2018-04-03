@@ -1,0 +1,118 @@
+{
+    "camiones": [
+      {
+        "chofer": "Juanito",
+        "patente": "DFAS21",
+        "rutas": [
+          {
+            "id": 1,
+            "Dirección": "Vicuña Mackenna 123",
+            "T. Estimado": "15 min",
+            "T Real": "45 min",
+            "Creación de Ruta": "Automática",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "San Diego 456",
+            "T. Estimado": "20 min",
+            "T Real": "20 min",
+            "Creación de Ruta": "Manual",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "Macul 123",
+            "T. Estimado": "35 min",
+            "T Real": "12 min",
+            "Creación de Ruta": "Manual",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "Los Leones 123",
+            "T. Estimado": "20 min",
+            "T Real": "15 min",
+            "Creación de Ruta": "Automática",
+            "Realización": true
+          }
+        ]
+      },
+          {
+        "chofer": "Pedrito",
+        "patente": "FGH679",
+        "rutas": [
+          {
+            "id": 1,
+            "Dirección": "Vicuña Mackenna 123",
+            "T. Estimado": "15 min",
+            "T Real": "45 min",
+            "Creación de Ruta": "Automática",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "San Diego 456",
+            "T. Estimado": "20 min",
+            "T Real": "20 min",
+            "Creación de Ruta": "Manual",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "Macul 123",
+            "T. Estimado": "35 min",
+            "T Real": "12 min",
+            "Creación de Ruta": "Manual",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "Los Leones 123",
+            "T. Estimado": "20 min",
+            "T Real": "15 min",
+            "Creación de Ruta": "Automática",
+            "Realización": true
+          }
+        ]
+      },
+          {
+        "chofer": "Andrea",
+        "patente": "JKLÑ12",
+        "rutas": [
+          {
+            "id": 1,
+            "Dirección": "Vicuña Mackenna 123",
+            "T. Estimado": "15 min",
+            "T Real": "45 min",
+            "Creación de Ruta": "Automática",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "San Diego 456",
+            "T. Estimado": "20 min",
+            "T Real": "20 min",
+            "Creación de Ruta": "Manual",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "Macul 123",
+            "T. Estimado": "35 min",
+            "T Real": "12 min",
+            "Creación de Ruta": "Manual",
+            "Realización": true
+          },
+          {
+            "id": 1,
+            "Dirección": "Los Leones 123",
+            "T. Estimado": "20 min",
+            "T Real": "15 min",
+            "Creación de Ruta": "Automática",
+            "Realización": true
+          }
+        ]
+      }
+    ]
+  }

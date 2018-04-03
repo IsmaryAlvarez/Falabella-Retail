@@ -1,12 +1,58 @@
 import React, { Component } from "react";
 import logo from "./img/logo-cuadrado-falabella.jpg";
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap'
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from "react-bootstrap";
+import { Chart } from "react-google-charts";
+import {camiones} from './data/data.json'
 import "./App.css";
 
+const ListItem = ({chofer, patente, rutas}) =>
+camiones.map((data) =>
+<div className="producto">
+  <p>{data.chofer}</p>
+  <p>{data.patente}</p>
+</div>
+);
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.chartEvents = [
+      {
+        eventName: 'select',
+        callback(Chart) {
+            // Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
+          console.log('Selected ', Chart.chart.getSelection());
+        },
+      },
+    ];
+    this.state = {
+      options: {
+        title: 'Age vs. Weight comparison',
+        hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
+        vAxis: { title: 'Weight', minValue: 0, maxValue: 15 },
+        legend: 'none',
+      },
+      rows: [
+        [8, 12],
+        [4, 5.5],
+        [11, 14],
+        [4, 5],
+        [3, 3.5],
+        [6.5, 7],
+      ],
+      columns: [
+        {
+          type: 'number',
+          label: 'Age',
+        },
+        {
+          type: 'number',
+          label: 'Weight',
+        },
+      ],
+    }
+  }
   render() {
     return (
-      
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -33,10 +79,24 @@ class App extends Component {
               <MenuItem eventKey={3.4}>Separated link</MenuItem>
             </NavDropdown>
           </Nav>
-        </Navbar>;
+        </Navbar>
+        <div className={"my-pretty-chart-container"}>
+        <Chart
+        chartType="ScatterChart"
+        rows={this.state.rows}
+        columns={this.state.columns}
+        options={this.state.options}
+        graph_id="ScatterChart"
+        width="100%"
+        height="400px"
+        chartEvents={this.chartEvents}
+      />
+        </div>
+  <ListItem/>
+        
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
