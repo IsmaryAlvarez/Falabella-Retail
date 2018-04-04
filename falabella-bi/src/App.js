@@ -1,62 +1,57 @@
 import React, { Component } from "react";
-import logo from "./img/logo-cuadrado-falabella.jpg";
+import logo from "./img/3000px-Falabella.png";
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from "react-bootstrap";
 import { Chart } from "react-google-charts";
-import {camiones} from './data/data.json'
+import { camiones } from "./data/data.json";
 import "./App.css";
 
-const ListItem = ({chofer, patente, rutas}) =>
-camiones.map((data) =>
-<div className="producto">
-  <p>{data.chofer}</p>
-  <p>{data.patente}</p>
-</div>
-);
+const ListItem = ({ chofer, patente}) =>
+  camiones.map(data => (
+    <div className="producto">
+      <p>{data.chofer}</p>
+      <p>{data.patente}</p>
+    </div>
+  ));
+
+const Viajes = ({ rutas }) => camiones.map(data => <p>{data.id}</p>);
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.chartEvents = [
       {
-        eventName: 'select',
+        eventName: "select",
         callback(Chart) {
-            // Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
-          console.log('Selected ', Chart.chart.getSelection());
-        },
-      },
+          // Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
+          console.log("Selected ", Chart.chart.getSelection());
+        }
+      }
     ];
     this.state = {
       options: {
-        title: 'Age vs. Weight comparison',
-        hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
-        vAxis: { title: 'Weight', minValue: 0, maxValue: 15 },
-        legend: 'none',
+        title: "Age vs. Weight comparison",
+        hAxis: { title: "Age", minValue: 0, maxValue: 15 },
+        vAxis: { title: "Weight", minValue: 0, maxValue: 15 },
+        legend: "none"
       },
-      rows: [
-        [8, 12],
-        [4, 5.5],
-        [11, 14],
-        [4, 5],
-        [3, 3.5],
-        [6.5, 7],
-      ],
+      rows: [[8, 12], [4, 5.5], [11, 14], [4, 5], [3, 3.5], [6.5, 7]],
       columns: [
         {
-          type: 'number',
-          label: 'Age',
+          type: "number",
+          label: "Age"
         },
         {
-          type: 'number',
-          label: 'Weight',
-        },
-      ],
-    }
+          type: "number",
+          label: "Weight"
+        }
+      ]
+    };
   }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Falabella-BI</h1>
         </header>
         <Navbar>
           <Navbar.Header>
@@ -81,22 +76,21 @@ class App extends Component {
           </Nav>
         </Navbar>
         <div className={"my-pretty-chart-container"}>
-        <Chart
-        chartType="ScatterChart"
-        rows={this.state.rows}
-        columns={this.state.columns}
-        options={this.state.options}
-        graph_id="ScatterChart"
-        width="100%"
-        height="400px"
-        chartEvents={this.chartEvents}
-      />
+          <Chart
+            chartType="ScatterChart"
+            rows={this.state.rows}
+            columns={this.state.columns}
+            options={this.state.options}
+            graph_id="ScatterChart"
+            width="100%"
+            height="400px"
+            chartEvents={this.chartEvents}
+          />
         </div>
-  <ListItem/>
-        
+        <ListItem />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
